@@ -1,0 +1,23 @@
+doctype html
+head
+  meta(charset="utf-8")
+  meta(name="viewport" content="width=device-width, initial-scale=1")
+  title Matrix templates
+  link(rel="icon" type="mage/x-icon" href="/static/favicon.png")
+  link(rel="stylesheet" href="/static/assets/fontawesome/css/all.css")
+  link(href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet")
+  link(rel="stylesheet" href=`/static/assets/css/main${dev ? '.css' : '.min.css'}`)
+  link(rel="stylesheet" href="/static/assets/css/navbar.css")
+  if enlace
+    link(rel="stylesheet" href=`/static/assets/css/${enlace}.css`)
+body
+  script(defer src=`/static/assets/fontawesome/js/all${dev ? '.js' : '.min.js'}`)
+  if !error
+    include navbar.pug
+  main
+    //- block hero
+    block content
+  //- include footer.pug
+  script(src=`/static/assets/js/main${dev ? '.js' : '.min.js'}`)
+  if enlace
+    script(src=`/static/assets/js/${enlace}.js`)

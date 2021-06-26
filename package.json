@@ -1,0 +1,32 @@
+{
+  "name": "statistics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "npm run start:server",
+    "start:server": "NODE_ENV=development nodemon server/index --exec babel-node --ext js,pug --ignore server/public",
+    "start:serverw": "SET NODE_ENV=development & nodemon server/index --exec babel-node",
+    "start:prod": "NODE_ENV=production node server.js",
+    "build:server": "babel server --out-dir dist/server",
+    "build": "npm run build:server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "~7.10.4",
+    "@babel/node": "~7.10.4",
+    "@babel/preset-env": "~7.10.4"
+  },
+  "dependencies": {
+    "@babel/polyfill": "~7.10.4",
+    "boom": "~7.3.0",
+    "connect-livereload": "~0.6.1",
+    "dotenv": "~8.2.0",
+    "express": "~4.17.1",
+    "livereload": "~0.9.1",
+    "pug": "~3.0.0"
+  }
+}

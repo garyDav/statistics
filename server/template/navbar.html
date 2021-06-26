@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Statics</title>
+  <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../public/assets/fontawesome/css/all.css">
+</head>
+<style>
+  :root {
+    font-size: 16px;
+    font-family: 'Muli',sans-serif;
+    --text-primary: #141418;
+    --text-secondary: #23232e;
+    --bg-primary: #f3f3f3;
+    --bg-secondary: #b6b6b6;
+    --bg-tertiary: #e3e3e3;
+    --icon-primary: #317cd8;
+    --transition-speed: 600ms;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-select: auto;
+  }
+  body {
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    margin: 0;
+    padding: 0;
+  }
+  body.open {
+    overflow: hidden;
+  }
+  body::-webkit-scrollbar {
+    width: 0.45rem;
+  }
+  body::-webkit-scrollbar-track {
+    background-color: var(--bg-tertiary);
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--bg-secondary);
+  }
+
+  .navbar {
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+  }
+  .navbar__nav {
+    background-color: var(--icon-primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    width: 100%;
+    height: 100%;
+  }
+  .navbar__nav--item a {
+    font-size: 1.5rem;
+    color: var(--bg-primary);
+    text-decoration: none;
+  }
+</style>
+<body>
+  <nav class="navbar">
+    <ul class="navbar__nav">
+      <li class="navbar__nav--item">
+        <a href="#">
+          <i class="fas fa-user-check"></i>
+          <span class="link-text">Asistencia</span>
+        </a>
+      </li>
+      <li class="navbar__nav--item">
+        <a href="#">
+          <i class="fas fa-camera-retro"></i>
+          <span class="link-text">Añadir</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <section>
+  </section>
+</body>
+</html>
