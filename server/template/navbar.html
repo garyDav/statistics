@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Statics</title>
   <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../public/assets/fontawesome/css/all.css">
@@ -31,9 +32,8 @@
     background-color: var(--bg-primary);
     margin: 0;
     padding: 0;
-  }
-  body.open {
-    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
   }
   body::-webkit-scrollbar {
     width: 0.45rem;
@@ -64,6 +64,20 @@
     color: var(--bg-primary);
     text-decoration: none;
   }
+  main {
+    position: relative;
+    display: flex;
+    /* height: calc(100% - 3.5rem); */
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+  }
+  video {
+    width: 100%;
+  }
+  canvas {
+    position: absolute;
+  }
 </style>
 <body>
   <nav class="navbar">
@@ -82,7 +96,8 @@
       </li>
     </ul>
   </nav>
-  <section>
-  </section>
+  <main>
+    <video id="videoInput" muted controls></video>
+  </main>
 </body>
 </html>
