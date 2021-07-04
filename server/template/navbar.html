@@ -6,83 +6,14 @@
   <title>Statics</title>
   <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../public/assets/fontawesome/css/all.css">
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="face-api.min.js"></script>
+  <script defer src="script.js"></script>
 </head>
-<style>
-  :root {
-    font-size: 16px;
-    font-family: 'Muli',sans-serif;
-    --text-primary: #141418;
-    --text-secondary: #23232e;
-    --bg-primary: #f3f3f3;
-    --bg-secondary: #b6b6b6;
-    --bg-tertiary: #e3e3e3;
-    --icon-primary: #317cd8;
-    --transition-speed: 600ms;
-  }
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    -webkit-touch-callout: none;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -webkit-user-select: auto;
-  }
-  body {
-    color: var(--text-primary);
-    background-color: var(--bg-primary);
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    height: 100vh;
-  }
-  body::-webkit-scrollbar {
-    width: 0.45rem;
-  }
-  body::-webkit-scrollbar-track {
-    background-color: var(--bg-tertiary);
-  }
-  body::-webkit-scrollbar-thumb {
-    background-color: var(--bg-secondary);
-  }
-
-  .navbar {
-    height: 3.5rem;
-    display: flex;
-    align-items: center;
-  }
-  .navbar__nav {
-    background-color: var(--icon-primary);
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    list-style: none;
-    width: 100%;
-    height: 100%;
-  }
-  .navbar__nav--item a {
-    font-size: 1.5rem;
-    color: var(--bg-primary);
-    text-decoration: none;
-  }
-  main {
-    position: relative;
-    display: flex;
-    /* height: calc(100% - 3.5rem); */
-    justify-content: center;
-    align-items: center;
-    background-color: blue;
-  }
-  video {
-    width: 100%;
-  }
-  canvas {
-    position: absolute;
-  }
-</style>
 <body>
   <nav class="navbar">
     <ul class="navbar__nav">
-      <li class="navbar__nav--item">
+      <li class="navbar__nav--item active">
         <a href="#">
           <i class="fas fa-user-check"></i>
           <span class="link-text">Asistencia</span>
@@ -96,8 +27,9 @@
       </li>
     </ul>
   </nav>
-  <main>
-    <video id="videoInput" muted controls></video>
+  <main id="main">
+    <video id="video" autoplay muted></video>
   </main>
 </body>
 </html>
+
