@@ -1,3 +1,5 @@
+// import Swal from 'sweetalert2'
+
 let canvas = document.querySelector('#canvas')
 let context = canvas.getContext('2d')
 let video = document.querySelector('#video')
@@ -11,4 +13,10 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 
 document.getElementById('snap').addEventListener('click', () => {
   context.drawImage(video, 0, 0, 320, 240)
+  Swal.fire({
+    title: 'Error!',
+    text: 'Do you want to continue',
+    icon: 'error',
+    confirmButtonText: 'Cool'
+  })
 })
