@@ -9,9 +9,9 @@ function routesApi(app) {
   const router = express.Router()
   app.use(router)
 
-  router.get('/assistance', permitsMiddleware, async (req, res, next) => {
+  router.get('/register', permitsMiddleware, async (req, res, next) => {
     try {
-      res.render('assistance/viewAssistance', { dev: config.dev, cActiveAss: true })
+      res.render('register/viewRegister', { dev: config.dev, cActiveReg: true })
     } catch(err) {
       next(err)
     }

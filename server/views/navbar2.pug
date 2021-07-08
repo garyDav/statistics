@@ -1,0 +1,33 @@
+nav.navbar
+  .navbar__search
+    span.icon-hand
+      i.far.fa-hand-point-left
+    span.icon-search
+      i.fas.fa-search
+  .navbar__input
+    .input(type='text' placeholder='Buscar...')
+  .navbar__title
+    h1= menu.title
+  .navbar__menu
+    span.icon-menu
+      i.fas.fa-bars
+  ul.navbar__nav
+    each m in menu.menu
+      li.navbar__nav--item
+        a(href=`${m.link}`)
+          i.fas(class=m.icon)
+          span.link-text= m.content
+
+  button.btn_add +
+  section.modal
+    article.modal__add
+      h3.modal__add--title= menu.title
+      each sm in sub_menu
+        ul.modal__add--menu
+          each em in sm
+            li
+              a(href=`${em.link}`)
+                i.fas(class=em.icon)
+                span= em.content
+
+script(defer src="/static/assets/js/navbar.js")

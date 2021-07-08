@@ -2,10 +2,11 @@ import express from 'express'
 import path from 'path'
 import boom from 'boom'
 import {
-  assistanceRouter
+  assistanceRouter,
+  registerRouter
 } from './routes'
 import isRequestAjaxOrAPI from './utils/isRequestAjaxOrAPI'
-import { permitsMiddleware } from './utils/middlewares/userPermits'
+/* import { permitsMiddleware } from './utils/middlewares/userPermits' */
 import { config } from './config'
 import livereload from 'livereload'
 import connectLivereload from 'connect-livereload'
@@ -43,13 +44,15 @@ app.set('view engine', 'pug')
 
 // Routes
 assistanceRouter(app)
+registerRouter(app)
 
 // Main Route
-app.get('/', permitsMiddleware, (req, res, next) => {
-  const { menu, sub_menu } = req
+app.get('/', (req, res, next) => {
+  // const { menu, sub_menu } = req
   try {
     // throw new Error("I'm Evil")
-    res.render('layout', { dev: config.dev, menu, sub_menu })
+    // res.render('layout', { dev: config.dev, menu, sub_menu })
+    res.redirect('/assistance')
   } catch(err) {
     next(err)
   }
